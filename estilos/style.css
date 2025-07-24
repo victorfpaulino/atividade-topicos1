@@ -1,85 +1,230 @@
+/* Reset básico */
 * {
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    background-color: #edbf85;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* Define a altura mínima do corpo como 100% da altura da janela de visualização */
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, #f8f6f1 0%, #ffe0b2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
-    margin-top: 50px;
+    margin-top: 80px;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    font-size: 58px;
-    color: #000000;
-    margin: 0; /*remove as margens padrão da tag*/
-    letter-spacing: 5px;
+    font-size: 2.5rem;
+    color: #333;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
 }
 
 nav {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #3498db, #2980b9);
+    width: 100%;
+    background: linear-gradient(to right, #3498db, #6dd5fa);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-
-nav ul { /*estilização dos itens do menu da navbar*/
+nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
 }
-
 nav li {
-    display: inline;
-    margin: 0 20px;
-    
+    margin: 0 1.5rem;
 }
-
 nav a {
-    color: rgb(0, 0, 0);
+    color: #fff;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-
-nav a:hover {
-     background-color: #D1CA98; /* Adiciona um efeito de hover ao link */
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+nav a:hover, nav a.active {
+    background: #fff;
+    color: #3498db;
 }
 
-#list-img-link {
-    list-style: none;
-    text-align: center;
-}
-
-ul#list-img-link li {
-    display: inline-block;
-    margin-right: 80px; /* Espaçamento entre os itens */
+main {
+    flex: 1;
+    padding-top: 70px;
+    padding-bottom: 60px;
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background: #222;
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    position: absolute;
+    padding: 1rem 0;
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
-  }
+    font-size: 1rem;
+    letter-spacing: 1px;
+    z-index: 1000;
+}
 
-.conteudo {
+.conteudo, .botoes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+#list-img-link, .botoes-container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+}
+#list-img-link li, .botoes-container ul li {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 1.5rem 1rem 1rem 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 180px;
+}
+#list-img-link li:hover, .botoes-container ul li:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(52,152,219,0.15);
+}
+#list-img-link img, .botoes-container img {
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    max-width: 500px;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    gap: 1rem;
+}
+form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+form input[type="text"],
+form input[type="date"],
+form textarea,
+form select {
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border 0.2s;
+}
+form input:focus, form textarea:focus, form select:focus {
+    border: 1.5px solid #3498db;
+    outline: none;
+}
+form input[type="submit"], .botao-voltar, .questionario a {
+    background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+}
+form input[type="submit"]:hover, .botao-voltar:hover, .questionario a:hover {
+    background: #217dbb;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.questionario {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin: 1rem;
+    min-width: 220px;
+    max-width: 320px;
+    flex: 1 1 220px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.questionario:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(52,152,219,0.15);
+}
+.questionario h2 {
+    color: #3498db;
+    margin-bottom: 0.5rem;
+}
+.questionario p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+    .conteudo, .botoes-container, #list-img-link, .botoes-container ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    nav li {
+        margin: 0.5rem 0;
+    }
+    main {
+        padding-top: 90px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    form {
+        padding: 1rem;
+        max-width: 95vw;
+    }
+    .questionario {
+        min-width: 90vw;
+        max-width: 95vw;
+    }
+    #list-img-link li, .botoes-container ul li {
+        min-width: 90vw;
+        max-width: 95vw;
+    }
 }

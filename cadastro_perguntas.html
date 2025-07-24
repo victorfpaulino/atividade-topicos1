@@ -3,49 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Perguntas</title>
+    <title>Cadastro de Perguntas</title>
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos/style.css">
-    <style>
-        form {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-        .formulario-container {
-            height: 800px;
-            width: 800px;
-            margin: 0 auto; /* Define as margens laterais como 'auto' para centralizar horizontalmente */
-            margin-top: 50px;
-            display: flex; /* Use display: flex; para centralizar verticalmente */
-            justify-content: center; /* Centralize horizontalmente dentro do elemento flex */
-            align-items: center; /* Centralize verticalmente dentro do elemento flex */
-        }   
-        </style>
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="cadastro_questionarios.html">Cadastro de Questionários</a></li>
-                <li><a href="cadastro_perguntas.html">Cadastro de Perguntas</a></li>
-                <li><a href="questionarios.html">Questionários</a></li>
-                <li><a href="analise_resultados.html">Análise de Resultados</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <h1 style="margin-top: 50px; margin-bottom: 50px;">Cadastro de Perguntas</h1>
-
-    <div class="formulario-container">
-        <form action="processar_cadastro.php" method="post">
+    <nav>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="cadastro_questionarios.html">Cadastro de Questionários</a></li>
+            <li><a href="cadastro_perguntas.html" class="active">Cadastro de Perguntas</a></li>
+            <li><a href="questionarios.html">Questionários</a></li>
+            <li><a href="analise_resultados.html">Análise de Resultados</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="header">
+            <h1>Cadastro de Perguntas</h1>
+        </div>
+        <form action="#" method="post">
             <label for="id_pergunta">ID da Pergunta:</label>
-            <input type="text" id="id_pergunta" name="id_pergunta" required><br><br>
+            <input type="text" id="id_pergunta" name="id_pergunta" required>
 
             <label for="tipo_pergunta">Tipo da Pergunta:</label>
             <select id="tipo_pergunta" name="tipo_pergunta" required>
@@ -53,16 +33,19 @@
                 <option value="fechado">Fechado</option>
                 <option value="multipla_escolha">Múltipla Escolha</option>
                 <option value="escala">Escala</option>
-            </select><br><br>
+            </select>
 
             <label for="enunciado">Enunciado da Pergunta:</label>
-            <textarea id="enunciado" name="enunciado" rows="4" cols="50" required></textarea><br><br>
+            <textarea id="enunciado" name="enunciado" rows="4" required></textarea>
 
             <label for="opcoes_respostas">Opções de Respostas (se aplicável):</label>
-            <textarea id="opcoes_respostas" name="opcoes_respostas" rows="4" cols="50"></textarea><br><br>
+            <textarea id="opcoes_respostas" name="opcoes_respostas" rows="4"></textarea>
 
             <input type="submit" value="Cadastrar Pergunta">
         </form>
-    </div>
+    </main>
+    <footer>
+        <p>&copy; Victor Paulino 2023</p>
+    </footer>
 </body>
 </html>

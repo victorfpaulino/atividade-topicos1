@@ -3,77 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Questionário</title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <title>Cadastro de Questionário</title>
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-    <style>
-    form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .campos {
-        height: 800px;
-        width: 800px;
-        margin: 0 auto; /* Define as margens laterais como 'auto' para centralizar horizontalmente */
-        margin-top: 50px;
-        display: flex; /* Use display: flex; para centralizar verticalmente */
-        justify-content: center; /* Centralize horizontalmente dentro do elemento flex */
-        align-items: center; /* Centralize verticalmente dentro do elemento flex */
-    }   
-
-    .formulario {
-        text-align: justify;
-    }
-    </style>
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="cadastro_questionarios.html">Cadastro de Questionários</a></li>
-                <li><a href="cadastro_perguntas.html">Cadastro de Perguntas</a></li>
-                <li><a href="questionarios.html">Questionários</a></li>
-                <li><a href="analise_resultados.html">Análise de Resultados</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="header">
-        <h1>Cadastro de Questionários</h1>
-    </div>
-
-    <div class="campos">
-        <form action="" method="post" class="formulario">
+    <nav>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="cadastro_questionarios.html" class="active">Cadastro de Questionários</a></li>
+            <li><a href="cadastro_perguntas.html">Cadastro de Perguntas</a></li>
+            <li><a href="questionarios.html">Questionários</a></li>
+            <li><a href="analise_resultados.html">Análise de Resultados</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="header">
+            <h1>Cadastro de Questionários</h1>
+        </div>
+        <form action="#" method="post">
             <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" required><br><br>
-    
+            <input type="text" id="titulo" name="titulo" required>
+
             <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea><br><br>
-    
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
             <label for="data_inicio">Data de Início:</label>
-            <input type="date" id="data_inicio" name="data_inicio" required><br><br>
-    
+            <input type="date" id="data_inicio" name="data_inicio" required>
+
             <label for="data_termino">Data de Término:</label>
-            <input type="date" id="data_termino" name="data_termino" required><br><br>
-    
+            <input type="date" id="data_termino" name="data_termino" required>
+
             <label for="publico_alvo">Público Alvo:</label>
             <select id="publico_alvo" name="publico_alvo" required>
                 <option value="estudantes">Estudantes</option>
                 <option value="professores">Professores</option>
                 <option value="profissionais">Profissionais</option>
                 <option value="outros">Outros</option>
-            </select><br><br>
-            <a href="questionarios.html"><input type="submit" value="Cadastrar Questionário" style="text-align: right;"></a>
-        </form>
+            </select>
 
-    </div>
+            <input type="submit" value="Cadastrar Questionário">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; Victor Paulino 2023</p>
+    </footer>
 </body>
 </html>

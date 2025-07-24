@@ -3,45 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise Resultados</title>
+    <title>Análise de Resultados</title>
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-    <style>
-        .botoes-container {
-            margin-top: 100px;
-            text-align: center;
-        }
-    </style>
-    
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="cadastro_questionarios.html">Cadastro de Questionários</a></li>
-                <li><a href="cadastro_perguntas.html">Cadastro de Perguntas</a></li>
-                <li><a href="questionarios.html">Questionários</a></li>
-                <li><a href="analise_resultados.html">Análise de Resultados</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <h1 style="margin-top: 50px; margin-bottom: 50px;">Análise de Resultados</h1>
-    <div class="botoes-container">
+    <nav>
         <ul>
-            <li>
-                <a href="#"><img src="images/img-questionario.png" alt="" height="150" width="150"></a>
-                <p>Resultados dos Questionários</p>
-            </li>
-            <li style="margin-top: 40px;">
-                <a href="#"><img src="images/img-pergunta3.png" alt="" srcset="" height="150" width="150"></a>
-                <p>Resultados das Perguntas</p>
-            </li>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="cadastro_questionarios.html">Cadastro de Questionários</a></li>
+            <li><a href="cadastro_perguntas.html">Cadastro de Perguntas</a></li>
+            <li><a href="questionarios.html">Questionários</a></li>
+            <li><a href="analise_resultados.html" class="active">Análise de Resultados</a></li>
         </ul>
-    </div>
+    </nav>
+    <main>
+        <div class="header">
+            <h1>Análise de Resultados</h1>
+        </div>
+        <div class="botoes-container">
+            <ul>
+                <li>
+                    <a href="#"><img src="images/img-questionario.png" alt="Resultados dos Questionários"></a>
+                    <p>Resultados dos Questionários</p>
+                </li>
+                <li>
+                    <a href="#"><img src="images/img-pergunta3.png" alt="Resultados das Perguntas"></a>
+                    <p>Resultados das Perguntas</p>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Victor Paulino 2023</p>
+    </footer>
 </body>
 </html>
